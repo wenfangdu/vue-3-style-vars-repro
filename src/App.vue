@@ -1,16 +1,23 @@
-<template>
-  <div class="text">hello</div>
-</template>
-
 <script>
+  import { ref } from 'vue'
+
   export default {
-    data() {
-      return {
-        color: 'red',
-        font: {
-          size: '2em',
-        },
-      }
+    // data() {
+    //   return {
+    //     color: 'red',
+    //     font: {
+    //       size: '2em',
+    //     },
+    //   }
+    // },
+    // 👇 how to use style-variables with setup render function?
+    setup() {
+      // eslint-disable-next-line
+      const color = ref('red')
+      // eslint-disable-next-line
+      const font = ref({ size: '2em' })
+
+      return () => <div class="text">hello</div>
     },
   }
 </script>
